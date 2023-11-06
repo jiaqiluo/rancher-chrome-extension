@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Rancher Chrome Extension",
+  "version": "0.1.0",
+  "description": "Enhance your Rancher Experience",
+  "icons": {
+    "16": "images/icon_16.png",
+    "32": "images/icon_32.png",
+    "48": "images/icon_48.png",
+    "128": "images/icon_128.png"
+  },
+  "action": {
+    "default_title": "Rancher Chrome Extension"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "https://*/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "downloads"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  }
+}
